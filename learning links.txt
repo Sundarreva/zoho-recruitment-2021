@@ -1,0 +1,5 @@
+http://tutorials.jenkov.com/java-reflection/private-fields-and-methods.html - testcases
+
+SQL system design
+https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-restaurant-order-system-in-mysql
+https://www.vertabelo.com/blog/the-doctor-will-see-you-soon-a-data-model-for-a-medical-appointment-booking-app/
