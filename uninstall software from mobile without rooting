@@ -1,0 +1,46 @@
+source to uninstall apps using cmd prompt = https://c.realme.com/in/post-details/1133984391169572864
+
+source to install softwares = https://beebom.com/how-remove-bloatware-android-phone/
+
+- First, download the Universal Android Debloater (UAD) from here(https://github.com/0x192/universal-android-debloater/releases). Click on “Assets” and download the EXE file for Windows. If you are on macOS, download the .tar.gz file.
+
+-  Next, you need to set up ADB on your PC. Follow link (https://beebom.com/how-to-install-adb-windows-mac/) to install ADB right away
+	- enable developer mode by taping build number multi time.
+	- This will enable “Developer options” on your Android device. Head over to “System” and then open Developer Options and enable “USB debugging”. Now, whenever you will connect your Android device to the computer, select the “File transfer (MTP)” mode. You are done on the device front. Now, the next step is to set up ADB on your computer.
+
+	- Install ADB on Windows, Firstly, download the ADB Platform Tools for Windows from Google’s official page (https://dl.google.com/android/repository/platform-tools-latest-windows.zip). Once downloaded, extract the contents of this file on your Windows PC using a file archiver utility like WinRAR.
+
+	- Now head over to the extracted folder, and click on the address bar. Now, type “cmd” and hit enter. Instantly, a command prompt window will open up in the ADB directory.
+	
+- After that, connect your Android device to Windows PC and execute `adb devices` command.
+- It will prompt a “USB debugging” prompt on your smartphone. Enable the “Always allow” checkbox and then tap on “Allow”
+- Now, you should see your device’s serial number in the Command Prompt window. If it does not detect your device then run `adb devices` again and this time, it will definitely detect your device. Congratulations! ADB is now successfully installed on your Windows PC.
+
+- commands:
+`adb shell`
+`pm list packages | grep 'amazon'`
+
+- once you got package names
+use `pm uninstall -k --user 0 <name of package>`
+
+
+examples,
+
+RMX---:/ $ pm list packages | grep 'shell'
+package:com.finshell.fin
+package:com.android.shell
+RMX----:/ $ adb shell
+/system/bin/sh: adb: inaccessible or not found
+RMX----:/ $ pm uninstall -k --user 0 com.finshell.fin
+Success
+RMX----:/ $ pm list packages | grep 'music'
+package:com.heytap.music
+package:com.google.android.apps.youtube.music
+RMX----:/ $ pm uninstall -k --user 0 com.heytap.music
+Success
+RMX----:/ $
+
+
+- removed finshell and music app.
+
+- besure to disablle usb debugger in mobile.
